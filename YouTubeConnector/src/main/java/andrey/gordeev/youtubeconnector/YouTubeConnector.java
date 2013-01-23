@@ -18,7 +18,7 @@ public final class YouTubeConnector {
 		try {
 			Document doc = Jsoup.connect(videoURL).get();
 			return doc;
-		} catch (IOException e) {
+		} catch (IOException exception) {
 			throw new YouTubeConnectException("Can't connect to YouTube!");
 		}
 	}

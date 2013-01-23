@@ -30,7 +30,7 @@ public final class RelatedVideosParser {
 		
 		try {
 			doc = youTubeConnector.getYouTubePage(videoURL);
-		} catch (YouTubeConnectException e) {
+		} catch (YouTubeConnectException exception) {
 			throw new YouTubeConnectException("Can't connect to YouTube!");
 		}
 		

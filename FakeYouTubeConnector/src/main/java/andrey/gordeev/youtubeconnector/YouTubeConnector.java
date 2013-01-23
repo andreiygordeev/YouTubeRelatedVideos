@@ -20,8 +20,8 @@ public final class YouTubeConnector {
 		InputStream inputRecource = null;
 		try {
 			inputRecource = this.getClass().getResource("/Maroon 5 - Moves Like Jagger ft. Christina Aguilera - YouTube.html").openStream();
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException exception) {
+			exception.printStackTrace();
 		}	
 		String fakeYouTubePage = Utils.readInputSream(inputRecource);
 		Document doc = Jsoup.parse(fakeYouTubePage);
