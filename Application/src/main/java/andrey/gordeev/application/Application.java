@@ -17,28 +17,31 @@ import andrey.gordeev.youtubeconnector.YouTubeConnectException;
  */
 public final class Application {
 	
-	public void youTubeRelatedVideos() throws YouTubeConnectException {
-		RelatedVideosParser relatedVideosParser = new RelatedVideosParser();
-		ArrayList<RelatedVideo> relatedVideos = relatedVideosParser.getRelatedVideos(input());
-		if(relatedVideos.size() == 0) {
-			System.out.println("You input incorrect URL");
-			System.exit(1);
-		}
-		output(relatedVideos);
-	}
-	
-	private String input() {
-		System.out.print("Input YouTube video URL: ");
-		Scanner in = new Scanner(System.in);
-		String videoURL = in.nextLine();
+	private String videoURL = " ";
+	private ArrayList<RelatedVideo> relatedVideos = new ArrayList<RelatedVideo>();
+
+	public boolean prepareVideos() throws YouTubeConnectException {
 		if(!exists(videoURL)) {
 			System.out.println("Your URL does not exist.");
-			System.exit(1);
+			return false;
 		}
-		return videoURL;
+		
+		RelatedVideosParser relatedVideosParser = new RelatedVideosParser();
+		relatedVideos = relatedVideosParser.getRelatedVideos(videoURL);
+		return true;
 	}
 	
-	private void output(ArrayList<RelatedVideo> relatedVideos) {
+	public void input() {
+		System.out.print("Input YouTube video URL: ");
+		Scanner in = new Scanner(System.in);
+		videoURL = in.nextLine();
+	}
+	
+	public void output() {
+		if(relatedVideos.size() == 0) {
+			System.out.println("There no related videos.");
+			return;
+		}
 		System.out.println("\nRelated videos info: ");
 		for(int i = 0; i < relatedVideos.size(); i++) {
 			System.out.println("Tittle: " + relatedVideos.get(i).getTitle());
@@ -47,7 +50,7 @@ public final class Application {
 		}
 	}
 	
-	public boolean exists(String URLName) {
+	private boolean exists(String URLName) {
 		try {
 			HttpURLConnection connection = (HttpURLConnection) new URL(URLName).openConnection();
 			connection.setRequestMethod("HEAD");
@@ -60,5 +63,22 @@ public final class Application {
 	       exception.printStackTrace();
 	       return false;
 	    }
-	}  
+	}
+	
+	public String getVideoURL() {
+		return videoURL;
+	}
+
+	public void setVideoURL(String videoURL) {
+		this.videoURL = videoURL;
+	}
+
+	public ArrayList<RelatedVideo> getRelatedVideos() {
+		return relatedVideos;
+	}
+
+	public void setRelatedVideos(ArrayList<RelatedVideo> relatedVideos) {
+		this.relatedVideos = relatedVideos;
+	}
+
 }

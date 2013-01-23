@@ -17,7 +17,12 @@ public final class Main {
 	 */
 	public static void main(String[] args) throws YouTubeConnectException {
 		Application application = new Application();
-		application.youTubeRelatedVideos();
+		application.input();
+		if(application.prepareVideos()) {
+			application.output();
+		} else {
+			System.exit(1);
+		}
 	}
 
 }
