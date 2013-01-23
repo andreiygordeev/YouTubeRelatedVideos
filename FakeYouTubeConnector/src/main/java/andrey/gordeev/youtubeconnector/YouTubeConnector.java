@@ -24,8 +24,7 @@ public final class YouTubeConnector {
 			e.printStackTrace();
 		}	
 		String fakeYouTubePage = Utils.readInputSream(inputRecource);
-		Document doc;
-		doc = Jsoup.parse(fakeYouTubePage);
+		Document doc = Jsoup.parse(fakeYouTubePage);
 		return doc;
 	}
 	

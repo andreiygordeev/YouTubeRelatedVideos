@@ -22,9 +22,8 @@ public final class Application {
 	
 	private String input() {
 		System.out.print("Input YouTube video URL: ");
-		String videoURL;
 		Scanner in = new Scanner(System.in);
-		videoURL = in.nextLine();
+		String videoURL = in.nextLine();
 		return videoURL;
 	}
 	

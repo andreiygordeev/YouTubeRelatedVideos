@@ -8,14 +8,7 @@
   
   	<artifactId>FakeYouTubeConnector</artifactId>
   
-  	<dependencies>
-      	<dependency>
-  	  	<!-- jsoup HTML parser library @ http://jsoup.org/ -->
-  			<groupId>org.jsoup</groupId>
-  			<artifactId>jsoup</artifactId>
-  			<version>1.7.1</version>
-	  	</dependency>
-	  
+  	<dependencies>	  
       	<dependency>
   	  		<groupId>andrey.gordeev.youtyberelatedvideos</groupId>
   			<artifactId>YouTubeConnector</artifactId>
