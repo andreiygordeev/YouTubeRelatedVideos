@@ -1,4 +1,8 @@
 /**
+ * Copyright (C) 25.01.2013 Andrey Gordeev andreiy.gordeev@gmail.com
+ * Free to use all application, or any part of source code.
+ */
+/**
  * 
  */
 package andrey.gordeev.applicationtest;
@@ -19,7 +23,7 @@ import andrey.gordeev.youtubeconnector.YouTubeConnectException;
  */
 public class RelatedVideosParserTest {
 
-	private static final String youTubeTestURL = "http://www.youtube.com/watch?v=c9mmxawZ-6w";
+	private static final String youTubeTestURL = "http://www.youtube.com/watch?v=9VZmYvldCyM";
 	
 	/**
 	 * Test method for {@link andrey.gordeev.application.RelatedVideosParser#getRelatedVideos(java.lang.String)}.
