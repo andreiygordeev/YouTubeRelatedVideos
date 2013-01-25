@@ -7,25 +7,33 @@
  */
 package andrey.gordeev.youtubeconnectortest;
 
+import static org.junit.Assert.assertFalse;
+
 import java.io.IOException;
 import java.io.InputStream;
 
 import org.junit.Test;
 
+import andrey.gordeev.youtubeconnector.YouTubeConnector;
+
 /**
- * @author Пользователь
+ * Tested class {@link YouTubeConnector}.
  *
  */
 public class YouTubeConnectorTest {
 
-	@Test(expected = NullPointerException.class)
+	/**
+	 * Test for input resources. If inputResource == null, resource was not loaded.
+	 */
+	@Test
 	public void testInputFakeFile() {
+		InputStream inputResource = null;
 		try {
-			@SuppressWarnings("unused")
-			InputStream inputRecource = this.getClass().getResource("sss").openStream();
+			inputResource = this.getClass().getResource("/Maroon 5 - Moves Like Jagger ft. Christina Aguilera - YouTube.html").openStream();
 		} catch (IOException exception) {
 			exception.printStackTrace();
 		}
+		assertFalse(inputResource == null);
 	}
 
 }

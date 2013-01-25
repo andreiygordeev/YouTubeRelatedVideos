@@ -9,6 +9,10 @@ import org.junit.Test;
 import andrey.gordeev.youtubeconnector.YouTubeConnectException;
 import andrey.gordeev.youtubeconnector.YouTubeConnector;
 
+/**
+ * Tested class {@link YouTubeConnector}.
+ *
+ */
 public class YouTubeConnectorTest {
 
 	/**

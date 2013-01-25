@@ -14,7 +14,7 @@ import org.jsoup.nodes.Document;
 
 /**
  * Provides interface to get html-page code. Uses JSoup library for connect to page and get
- * it's source-code (@see <a href="http://jsoup.org/">JSoup</a>).
+ * it's source-code (see <a href="http://jsoup.org/">JSoup</a>).
  */
 public final class YouTubeConnector {
 
