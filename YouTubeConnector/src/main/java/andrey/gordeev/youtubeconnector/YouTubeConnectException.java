@@ -3,15 +3,14 @@
  * Free to use all application, or any part of source code.
  */
 /**
- * 
+ * andrey.gordeev.youtubeconnector is a connector to YouTube page, for loading html-code of the page.
  */
 package andrey.gordeev.youtubeconnector;
 
 import java.io.IOException;
 
 /**
- * @author Пользователь
- *
+ * Exception, which throws, when can't get page for some reason.
  */
 public final class YouTubeConnectException extends IOException{
 
