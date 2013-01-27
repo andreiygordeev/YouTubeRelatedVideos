@@ -3,7 +3,7 @@
  * Free to use all application, or any part of source code.
  */
 /**
- * 
+ * andrey.gordeev.application provides interface for YouTubeRelatedVideos.
  */
 package andrey.gordeev.application;
 
@@ -16,7 +16,8 @@ import java.util.Scanner;
 import andrey.gordeev.youtubeconnector.YouTubeConnectException;
 
 /**
- * @author Пользователь
+ * Destination of this class is to control all part's of the application. It is responsible
+ * for interaction with user, by console.
  *
  */
 public final class Application {
@@ -24,6 +25,14 @@ public final class Application {
 	private String videoURL = " ";
 	private ArrayList<RelatedVideo> relatedVideos = new ArrayList<RelatedVideo>();
 
+	/**
+	 * Method getting related videos, by URL, that contain's in videoURL. If URL is not
+	 * valid, returning false, without parsing.
+	 * 
+	 * @return true - when parsing is done.
+	 * 		   false - when URL is not valid.
+	 * @throws YouTubeConnectException
+	 */
 	public boolean prepareVideos() throws YouTubeConnectException {
 		if(!exists(videoURL)) {
 			System.out.println("Your URL does not exist.");
@@ -35,15 +44,21 @@ public final class Application {
 		return true;
 	}
 	
+	/**
+	 * Console user input. Getting video URL, to parse.
+	 */
 	public void input() {
 		System.out.print("Input YouTube video URL: ");
 		Scanner in = new Scanner(System.in);
 		videoURL = in.nextLine();
 	}
 	
+	/**
+	 * Outputting information of related videos to console.
+	 */
 	public void output() {
 		if(relatedVideos.size() == 0) {
-			System.out.println("There no related videos.");
+			System.out.println("There are no related videos.");
 			return;
 		}
 		System.out.println("\nRelated videos info: ");
@@ -54,6 +69,12 @@ public final class Application {
 		}
 	}
 	
+	/**
+	 *  Checking, is URL really exist's, by HTTP HEAD-request.
+	 * @param URLName
+	 * @return true - if URL exist.
+	 * 		   false - if URL does not exist.
+	 */
 	private boolean exists(String URLName) {
 		try {
 			HttpURLConnection connection = (HttpURLConnection) new URL(URLName).openConnection();

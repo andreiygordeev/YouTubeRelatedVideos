@@ -13,16 +13,16 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 /**
- * Provides interface to get html-page code. Uses JSoup library for connect to page and get
+ * Provides interface to get HTML-page code. Uses JSoup library for connect to page and get
  * it's source-code (see <a href="http://jsoup.org/">JSoup</a>).
  */
 public final class YouTubeConnector {
 
 	/**
-	 * Connected to html-page and getting it's source-code.
+	 * Connected to HTML-page and getting it's source-code.
 	 * 
 	 * @param videoURL URL to connect to the page.
-	 * @return document, which contains html source-code of the page.
+	 * @return document, which contains HTML source-code of the page.
 	 * @throws YouTubeConnectException
 	 */
 	public Document getYouTubePage(String videoURL) throws YouTubeConnectException {

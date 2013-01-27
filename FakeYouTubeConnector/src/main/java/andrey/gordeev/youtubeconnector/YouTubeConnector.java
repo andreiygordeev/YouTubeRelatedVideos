@@ -24,7 +24,7 @@ public final class YouTubeConnector {
 	
 	/**
 	 * @param videoURL URL to connect to the page.
-	 * @return document, which contains html source-code of the page.
+	 * @return document, which contains HTML source-code of the page.
 	 * @throws YouTubeConnectException
 	 */
 	public Document getYouTubePage(String videoURL) throws YouTubeConnectException{

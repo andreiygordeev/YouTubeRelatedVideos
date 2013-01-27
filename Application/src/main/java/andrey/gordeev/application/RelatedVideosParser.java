@@ -3,7 +3,7 @@
  * Free to use all application, or any part of source code.
  */
 /**
- * 
+ * andrey.gordeev.application provides interface for YouTubeRelatedVideos.
  */
 package andrey.gordeev.application;
 
@@ -17,8 +17,10 @@ import andrey.gordeev.youtubeconnector.YouTubeConnectException;
 import andrey.gordeev.youtubeconnector.YouTubeConnector;
 
 /**
- * @author Пользователь
- *
+ * Provides interface for parsing YouTube page, to get related videos. Using JSoup
+ * library to parse HTML page (see <a href="http://jsoup.org/">JSoup</a>). Information about 
+ * finding related videos, storing in {@link RelatedVideo}. Getting information about related 
+ * videos performed using select-query of JSoup using CSS construction's.
  */
 public final class RelatedVideosParser {
 	
@@ -28,6 +30,14 @@ public final class RelatedVideosParser {
 	private final String ATTR_URL_CSS = "href";	
 	private final String YOUTUBEURL = "http://www.youtube.com";
 	
+	/**
+	 * Method provides connection to YouTube, by {@link YouTubeConnector}. Then, parsed 
+	 * received page by using CSS construction's to get information about related videos, 
+	 * and storing them in array.
+	 * @param videoURL URL to connect to the page.
+	 * @return array of related videos.
+	 * @throws YouTubeConnectException
+	 */
 	public ArrayList<RelatedVideo> getRelatedVideos(String videoURL) throws YouTubeConnectException {
 		Document doc;
 		YouTubeConnector youTubeConnector = new YouTubeConnector();

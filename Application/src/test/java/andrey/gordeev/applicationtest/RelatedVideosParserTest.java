@@ -3,7 +3,7 @@
  * Free to use all application, or any part of source code.
  */
 /**
- * 
+ * andrey.gordeev.applicationtest - package for testing application API.
  */
 package andrey.gordeev.applicationtest;
 
@@ -18,8 +18,7 @@ import andrey.gordeev.application.RelatedVideosParser;
 import andrey.gordeev.youtubeconnector.YouTubeConnectException;
 
 /**
- * @author Пользователь
- *
+ * Test class for related videos parser. Testing behavior of parser with correct and incorrect URL.
  */
 public class RelatedVideosParserTest {
 
@@ -27,6 +26,7 @@ public class RelatedVideosParserTest {
 	
 	/**
 	 * Test method for {@link andrey.gordeev.application.RelatedVideosParser#getRelatedVideos(java.lang.String)}.
+	 * Testing parsing behavior with incorrect URL.
 	 * @throws YouTubeConnectException 
 	 */
 	@Test
@@ -43,6 +43,7 @@ public class RelatedVideosParserTest {
 	
 	/**
 	 * Test method for {@link andrey.gordeev.application.RelatedVideosParser#getRelatedVideos(java.lang.String)}.
+	 * Testing parsing behavior with correct URL.
 	 * @throws YouTubeConnectException 
 	 */
 	@Test

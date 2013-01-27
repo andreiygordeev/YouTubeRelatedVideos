@@ -3,7 +3,7 @@
  * Free to use all application, or any part of source code.
  */
 /**
- * andrey.gordeev.youtubeconnector is a connector to YouTube page, for loading html-code of the page.
+ * andrey.gordeev.youtubeconnector is a connector to YouTube page, for loading HTML-code of the page.
  */
 package andrey.gordeev.youtubeconnector;
 

@@ -3,12 +3,12 @@
  * Free to use all application, or any part of source code.
  */
 /**
- * 
+ * andrey.gordeev.application provides interface for YouTubeRelatedVideos.
  */
 package andrey.gordeev.application;
 
 /**
- * @author Пользователь
+ * Java-Bean for storage YouTube related videos information.
  *
  */
 public final class RelatedVideo {
